@@ -13,15 +13,31 @@ class DescriptionPage extends StatefulWidget {
 }
 
 class _DescriptionPageState extends State<DescriptionPage> {
+  double fSize = 20.0;
   @override
   Widget build(BuildContext context) {
-    double fSize = 26.0;
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.data.title),
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
+          leading: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(Icons.dangerous_outlined)),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text("Hello from snackbar")),
+                  );
+                },
+                icon: const Icon(Icons.info)),
+          ],
         ),
         body: Padding(
-          padding: const EdgeInsets.all(gap20),
+          padding: const EdgeInsets.all(gap10),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -39,25 +55,37 @@ class _DescriptionPageState extends State<DescriptionPage> {
                       child: const Text("Small Title")),
                   ElevatedButton(
                       onPressed: () {
-                        fSize = 24.0;
+                        setState(() {
+                          fSize = 28.0;
+                        });
                       },
                       child: const Text("Medium Title")),
                   OutlinedButton(
                       onPressed: () {
-                        fSize = 32.0;
+                        setState(() {
+                          fSize = 40.0;
+                        });
                       },
                       child: const Text("Large Title")),
                   FilledButton(
                       onPressed: () {
                         setState(() {
-                          fSize = 200.0;
+                          fSize = 80.0;
                         });
                       },
                       child: const Text("Huge Title")),
                 ]),
-                Text(widget.data.title,
-                    style: TextStyle(
-                        fontSize: fSize, fontWeight: FontWeight.bold)),
+                const SizedBox(
+                  height: gap20,
+                ),
+                FittedBox(
+                  child: Text(widget.data.title,
+                      style: TextStyle(
+                          fontSize: fSize, fontWeight: FontWeight.bold)),
+                ),
+                const SizedBox(
+                  height: gap20,
+                ),
                 const Text(
                   demoDescription,
                   style: p,
