@@ -1,5 +1,6 @@
 import 'package:first_app/class/card_data.dart';
 import 'package:first_app/core/constants.dart';
+import 'package:first_app/pages/description_page.dart';
 import 'package:flutter/material.dart';
 
 class CardWidget extends StatelessWidget {
@@ -10,18 +11,27 @@ class CardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Container(
-        padding: const EdgeInsets.all(gap10),
-        width: double.infinity,
-        child: Column(
-          children: [
-            const SizedBox(height: gap10),
-            Image.asset(imagePath),
-            const SizedBox(height: gap10),
-            Text(data.title, style: h1),
-            Text(data.description, style: p)
-          ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(
+          builder: (context) {
+            return const DescriptionPage();
+          },
+        ));
+      },
+      child: Card(
+        child: Container(
+          padding: const EdgeInsets.all(gap10),
+          width: double.infinity,
+          child: Column(
+            children: [
+              const SizedBox(height: gap10),
+              Image.asset(imagePath),
+              const SizedBox(height: gap10),
+              Text(data.title, style: h1),
+              Text(data.description, style: p)
+            ],
+          ),
         ),
       ),
     );
