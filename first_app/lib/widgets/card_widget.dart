@@ -15,7 +15,7 @@ class CardWidget extends StatelessWidget {
       onTap: () {
         Navigator.push(context, MaterialPageRoute(
           builder: (context) {
-            return const DescriptionPage();
+            return DescriptionPage(data: data, imagePath: imagePath);
           },
         ));
       },

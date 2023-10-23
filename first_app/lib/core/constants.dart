@@ -14,3 +14,7 @@ const TextStyle h5 = TextStyle(fontSize: 20, fontWeight: FontWeight.w600);
 const TextStyle h6 = TextStyle(fontSize: 18, fontWeight: FontWeight.w600);
 
 const TextStyle p = TextStyle(fontSize: 16);
+
+// some placeholder texts.
+
+const String demoDescription = "A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.A space ship is an aircraft used to travel in space.";
